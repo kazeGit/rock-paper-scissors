@@ -5,7 +5,7 @@ import com.kaze.models.Command;
 
 public class CommandParser
 {
-    public Command parse(String message)
+    public static Command parse(String message)
     {
         try {
             return Command.valueOf(message.toUpperCase());
