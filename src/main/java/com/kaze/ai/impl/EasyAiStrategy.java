@@ -2,6 +2,7 @@ package com.kaze.ai.impl;
 
 import com.kaze.ai.AiStrategy;
 import com.kaze.models.Gesture;
+import com.kaze.models.Round;
 import com.kaze.strategy.RuleStrategy;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -10,7 +11,7 @@ import org.apache.commons.lang3.tuple.Pair;
  */
 public class EasyAiStrategy implements AiStrategy {
     @Override
-    public Gesture getGesture(Gesture humanGesture) {
+    public Gesture getGesture(Gesture humanGesture, Round round) {
         final Pair<Gesture, Gesture> gesturePair = RuleStrategy.WIN_PAIRS.stream()
                 // we know it is there, get is safe
             .filter(pair -> pair.getLeft().equals(humanGesture)).findFirst().get();
